@@ -1,4 +1,4 @@
-Run git clone https://github.com/your-username/yusafco-laravel.git.
+Run git clone https://github.com/EngAmanShah/yusafco-laravel.git.
 cd into the new folder.
 Copy .env.example to .env.
 Fill in the .env file with your database credentials.
