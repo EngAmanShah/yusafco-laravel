@@ -1,0 +1,57 @@
+/*
+*  Styles for Admin On-Page Editing
+*  This uses 'outline' to prevent layout shifting.
+*/
+.editable-container {
+    position: relative;
+    outline: 2px dashed transparent;
+    outline-offset: 4px;
+    transition: outline-color 0.3s ease;
+}
+
+.editable-container:hover {
+    outline-color: #7b5ab8;
+}
+/*
+*  Styles for Admin On-Page Editing
+*  This positions the button relative to the content's parent
+*/
+.position-relative {
+    position: relative !important;
+}
+
+.edit-button {
+    position: absolute;
+    top: -10px;
+    right: -10px; /* Position to the top-right of the parent */
+    z-index: 10;
+    background-color: #7b5ab8;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.edit-button:hover {
+    transform: scale(1.15);
+}
+
+
+
+/* --- MOBILE FIXES FOR ADMIN EDITING --- */
+@media (max-width: 767.98px) {
+    .editable-container {
+        outline-color: rgba(123, 90, 184, 0.5);
+    }
+    .edit-button {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

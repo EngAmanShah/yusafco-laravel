@@ -1,0 +1,126 @@
+/* =================================================================
+   YOSAFCO - FINAL PROFESSIONAL & RESPONSIVE STYLESHEET
+================================================================= */
+
+/* --- 1. CSS RESET & GLOBAL SETUP (CRUCIAL FOR RESPONSIVENESS) --- */
+*, *::before, *::after {
+    box-sizing: border-box; /* This prevents padding/borders from adding extra width */
+}
+html {
+    scroll-padding-top: 70px;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Cairo', sans-serif;
+    overflow-x: hidden; /* Prevents ALL horizontal scrolling */
+}
+
+/* --- HERO BANNER --- */
+.hero-section {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex; /* Use flexbox for perfect centering */
+    align-items: center;
+    justify-content: center;
+}
+.hero-title {
+    font-size: 4.5rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+.hero-subtitle { max-width: 600px; margin: 1.5rem auto; }
+/* --- 2. TYPOGRAPHY & BUTTONS --- */
+h1, h2, h3, h4, h5, h6 { font-weight: 800; }
+.btn-primary {
+    background-color: #28a745;
+    border-color: #28a745;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #1e7e34;
+    border-color: #1c7430;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* --- 3. NAVBAR / HEADER --- */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+.navbar-brand { color: #28a745; font-weight: 800; }
+.navbar-toggler { border: none; }
+.navbar-toggler:focus { box-shadow: none; }
+.navbar-nav .nav-link { font-weight: 600; }
+.navbar-nav .nav-link.active, .navbar-nav .nav-link:hover { color: #28a745 !important; }
+
+/* --- 4. HERO / BANNER SECTION --- */
+.hero-section {
+    position: relative; /* <-- THIS IS THE CRITICAL FIX */
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    color: white;
+    display: flex; /* These two lines are also important for vertical alignment */
+    align-items: center;
+}
+.hero-title {
+    font-size: 4.5rem; /* Large on desktop */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+.hero-subtitle { max-width: 600px; margin: 1.5rem auto; }
+
+/* --- 5. GENERAL SECTIONS & CARDS --- */
+.section-padding { padding: 80px 0; }
+.service-card {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    padding: 30px;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ===============================================================
+   MOBILE RESPONSIVE OVERRIDES (THE MOST IMPORTANT PART)
+=============================================================== */
+@media (max-width: 767.98px) {
+    
+    /* --- GENERAL MOBILE FIXES --- */
+    .section-padding { padding: 50px 0; }
+    h1, .display-3 { font-size: 2.2rem !important; } /* Force smaller title */
+    h2, .display-5 { font-size: 1.8rem !important; }
+
+    /* --- HEADER / NAVBAR FIX --- */
+    /* This ensures the brand and toggle are pushed to the edges */
+    .navbar > .container, .navbar > .container-fluid {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .navbar-collapse {
+        margin-top: 15px;
+        padding: 15px;
+        background-color: #0e0d0d;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .navbar-nav .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* --- BANNER FIX --- */
+    .hero-section { min-height: 90vh; }
+    .hero-subtitle { font-size: 1.1rem; }
+}
